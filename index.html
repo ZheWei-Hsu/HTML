@@ -38,7 +38,11 @@
                 <button id="btn">More</button>
             </div>    
 
-            <div class="bgLogo"></div>
+            <div class="bgLogo" style='background-image: url("../IMG/img1.png");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: contain;'>
+            </div>
 
             <div class= "soc">
                 <div class="instagram"></div>
@@ -48,23 +52,31 @@
         
         </section>
 
-        <!-- <section class= "thumb">
+        <div class="thumb">
             <div class="circle"> </div>
-            <div class="instagram"></div>
-            <div class="twitter"></div>
-            <div class="facebook"></div>
-        </section> -->
-
-
-        <ul class="thumb">
-            <div class="circle"> </div>
-            <li><img  src="IMG/thumb1.png" alt="Starbucks"></li>
-            <li><img  src="IMG/thumb2.png" alt="Starbucks"></li>
-            <li><img  src="IMG/thumb3.png" alt="Starbucks"></li>
-        </ul>
-
-    
+            <img  src="IMG/img1.png" alt="Starbucks">
+            <img  src="IMG/img2.png" alt="Starbucks">
+            <img  src="IMG/img3.png" alt="Starbucks">
+        </div>
     </section>
+
+    <script>
+        function change_img(e){
+
+            console.log(e.target);
+            let new_src1 = e.target.src;
+            document.querySelector(".bgLogo").style.backgroundImage = `url("${new_src1}")`;
+        }    
+
+        function init(){
+            document.querySelectorAll(".thumb > img").forEach
+            (function(element){
+                element.addEventListener("click", change_img) 
+            })
+        }
+
+        window.addEventListener("load", init);
+    </script>
    
     
 </body>
